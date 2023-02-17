@@ -1,2 +1,3 @@
 # information_content
-Developing a measure of information for a statistic
+In this module, we calculate the relative entropy of two estimators
+for a given data set. 
