@@ -1,0 +1,9 @@
+KL Divergence for 2D Gaussian random fields:
+    ☐ Calculate the power spectrum of the field
+    ☐ In what sense does P contain 'all' information?
+    ☐ Use a different statistic to inform about the field
+    ☐ Can you compare the two estimators using KL divergence?
+
+KL divergence / relative entropy compares two distributions and returns a
+'distance' between the two (not a true distance, just a measure of difference).
+How can it be applied to two _estimators_?

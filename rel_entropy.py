@@ -7,9 +7,8 @@ from typing import Callable
 
 def entropy_calc(data: np.array, est_1: Callable, est_2: Callable, 
                  visualise: bool = False, save_name: None = str) -> tuple:
-    """Calculate the relative entropy of two input estimators of the variance
+    """Calculates the relative entropy of two input estimators of the variance
       of given input data."""
-
     # Define functions
     def jackknife_variance(data: np.array, variance_func: Callable) -> tuple:
         """Use jackknife resampling to construct a distribution of
@@ -35,9 +34,10 @@ def entropy_calc(data: np.array, est_1: Callable, est_2: Callable,
     counts_biased = np.histogram(var_dist_biased, bins=bins, density=True)[0]
 
     # Next, use the scipy function 'entropy' to get the relative entropy
+    # The unit of entropy is bits
     eps = 1e-10 # Add a small number to the counts to avoid division by zero
-    relative_entropy_12 = np.round(entropy(counts_unbiased+eps, counts_biased+eps), 4)
-    relative_entropy_21 = np.round(entropy(counts_biased+eps, counts_unbiased+eps), 4)
+    relative_entropy_12 = np.round(entropy(counts_unbiased+eps, counts_biased+eps, base=2), 4)
+    relative_entropy_21 = np.round(entropy(counts_biased+eps, counts_unbiased+eps, base=2), 4)
 
     if visualise == True:
         # Plot histograms of jackknife variance estimates
@@ -58,7 +58,7 @@ def entropy_calc(data: np.array, est_1: Callable, est_2: Callable,
         if save_name is not None:
             plt.savefig('plots/{}.png'.format(save_name), bbox_inches='tight', dpi=300)
         else:
-            plt.savefig('plots/example.png', bbox_inches='tight', dpi=300)
+            plt.savefig('plots/example_3.png', bbox_inches='tight', dpi=300)
         plt.close()
 
     else:

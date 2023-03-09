@@ -52,6 +52,6 @@ print('S_12 = {}, S_21 = {}'.format(ent_12,
 est_1 = lambda x: np.var(x, ddof=0) # biased
 est_2 = lambda x: np.percentile(x, 75) - np.percentile(x, 25) # interquartile range
 # Calculate the relative entropy and print the results
-ent_12, ent_21 = entropy_calc(data, est_1, est_2, visualise=False)
+ent_12, ent_21 = entropy_calc(data, est_1, est_2, visualise=True)
 print('S_12 = {}, S_21 = {}'.format(ent_12,
             ent_21))
