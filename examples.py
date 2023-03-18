@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 
-# In this example script, we use the entropy_calc
-# function from the library to calculate the
-# the relative entropy of two different estimators.
+"""In this example script, we use the entropy_calc function from the
+    library to calculate the relative entropy of two different estimators."""
 
 # Import libraries
 import numpy as np
