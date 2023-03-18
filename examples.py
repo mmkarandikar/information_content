@@ -23,7 +23,8 @@ est_1 = lambda x: np.var(x, ddof=0) # biased
 est_2 = lambda x: np.var(x, ddof=1) # unbiased
 
 # Calculate the relative entropy and print the results
-ent_12, ent_21 = entropy_calc(data, est_1, est_2, visualise=True, save_name='unbiased_biased')
+ent_12, ent_21 = entropy_calc(data, est_1, est_2, visualise=True,
+                                 save_name='unbiased_biased')
 
 print('S_12 = {}, S_21 = {}'.format(ent_12,
             ent_21))
@@ -50,7 +51,7 @@ print('S_12 = {}, S_21 = {}'.format(ent_12,
 
 # Define the two estimators
 est_1 = lambda x: np.var(x, ddof=0) # biased
-est_2 = lambda x: np.percentile(x, 75) - np.percentile(x, 25) # interquartile range
+est_2 = lambda x: np.percentile(x, 75) - np.percentile(x, 25)
 # Calculate the relative entropy and print the results
 ent_12, ent_21 = entropy_calc(data, est_1, est_2, visualise=True)
 print('S_12 = {}, S_21 = {}'.format(ent_12,
