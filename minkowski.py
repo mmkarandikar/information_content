@@ -16,7 +16,7 @@ def calculate_minkowski(field: np.ndarray, threshold: float = None, geom: bool =
         viz., surface area, circumference, and the euler characteristic.
     norm: if true, the output functionals are normalised by the area M0.
     """
-    assert field.ndim == 2, "The input field must be two-dimensional."
+    assert field.ndim == 2, "The input field must be 2-dimensional."
 
     # If no threshold is specified, we use the field itself if it has binary
     # values, otherwise its median value is used as the threshold.
