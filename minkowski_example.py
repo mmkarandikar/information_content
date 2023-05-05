@@ -15,8 +15,8 @@ from minkowski import calculate_minkowski
 #  yields a favourable comparison with the expected functionals. In case of
 # overlap, the expected values are an overestimate.
 N = 2048 # field size
-radius = 40 # radius of a disk
-num_disks = 10 # number of disks
+radius = 200 # radius of a disk
+num_disks = 5 # number of disks
 
 # Generate a random placement of the disks
 positions = np.random.uniform(low=radius, high=N-radius, size=(num_disks, 2))
